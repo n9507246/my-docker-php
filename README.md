@@ -1,1 +1,1 @@
-урок XDebug + Docker + PhpStorm: простая настройка и отладка PHP https://www.youtube.com/watch?v=hFqwRfBkcgo
+кастомная настройка докер для php
