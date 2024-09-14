@@ -1,7 +1,7 @@
 <?php
     echo '<pre>';
-    echo 'ass';
-    echo 'hole';
+    echo 'ass</br>';
+    echo 'hole</br>';
     
     var_dump($_ENV);
     echo '</pre>';

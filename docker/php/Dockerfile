@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:8.1-apache
 
 # Устанавливаем зависимости и Xdebug
 RUN apt-get update && apt-get install -y \
