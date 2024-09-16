@@ -1,32 +1,24 @@
 <?php
+$dsn = 'mysql:host=mysql;dbname=myDB';
+$username = 'username';
+$password = 'password';
 
-$servername = "mysql";
-$username = "myuser";
-$password = "mypassword";
-$dbname = "mydb";
-
-// Создаем соединение
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Проверяем соединение
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
-// Выполняем запрос
-$sql = "SELECT * FROM mytable";
-$result = $conn->query($sql);
-
-// Выводим результат
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "acccccc: " . $row["a"]. " - b: " . $row["b"]. "<br>";
-    }
-} else {
-    echo "0 results";
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+    exit();
 }
 
-// Закрываем соединение
-$conn->close();
-?>    
+// Perform query
+$stmt = $pdo->query('SELECT * FROM myTable');
+
+// Fetch results
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    echo $row["id"] . " " . $row["name"] . "<br>";
+}
+
+// Close connection
+$pdo = null;
+?>
