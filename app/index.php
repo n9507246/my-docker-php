@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:host=mysql;dbname=mydb';
+$dsn = 'mysql:host=database;dbname=mydb';
 $username = 'myuser';
 $password = 'mypassword';
 
