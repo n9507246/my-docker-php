@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php:
-    build: ./docker/php
+    build: ./images/php
     ports:
       - ${APP_PORT}:80
     volumes:

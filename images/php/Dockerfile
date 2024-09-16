@@ -1,6 +1,5 @@
 FROM php:8.1-apache
 
-ENV MYSQL_UNIX_SOCKET=/var/run/mysqld/mysqld.sock
 
 RUN apt-get update && apt-get install -y \
         libicu-dev \
@@ -13,9 +12,9 @@ RUN pecl install xdebug-3.1.5 \
 # instal DB
 RUN docker-php-ext-install mysqli
 
-
+#pdo
 RUN docker-php-ext-install pdo pdo_mysql
 
 
-COPY /infrastructure/images/Dockerfile-app /usr/local/etc/php/conf.d/
+COPY ./xdebug.ini /usr/local/etc/php/conf.d/
 

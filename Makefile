@@ -2,7 +2,7 @@
 
 # Переменные
 APP_DIR = app
-INFRASTRUCTURE_DIR = infrastructure
+INFRASTRUCTURE_DIR = .
 CONFIG_DIR = $(INFRASTRUCTURE_DIR)/config
 DOCKER_COMPOSE_FILE = $(INFRASTRUCTURE_DIR)/docker-compose.yml
 DOCKER_COMPOSE_DEV_FILE = $(INFRASTRUCTURE_DIR)/docker-compose.dev.yml
