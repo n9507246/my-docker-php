@@ -17,5 +17,5 @@ RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pdo pdo_mysql
 
 
-COPY xdebug.ini /usr/local/etc/php/conf.d/
+COPY /infrastructure/images/Dockerfile-app /usr/local/etc/php/conf.d/
 
